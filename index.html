@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <!-- Partea de informatie a website-ului -->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Ekans the multiplayer snake game" />
+    <meta name="keywords" content="snake,multiplayer,game,online game" />
+    <meta name="author" content="Andrei V" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekans | First Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="./app.css" rel="stylesheet" />
+</head>
+    <!-- Partea vizibila a website-ului -->
+<body>
+    <div id="DIV_status">
+        <span id="SPA_status">(status)</span>
+        <div id="DIV_status_buttons">
+            <button id="BTN_status-yes" class="btn">Yes</button>
+            <button id="BTN_status-no" class="btn">No</button>
+        </div> 
+    </div>
+
+    <section class="body-section">
+        <div id="room-list-container" class="list">
+            <div id="room-list-header" class="list-header center">
+                <p>Rooms</p>
+            </div>
+            <ul id="room-list" class="scroll">
+                <li id="add-room" class="list-item-header">
+                    <div>
+                        <h3>New room</h3>
+                        <button id="BTN_add-room">+</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <main id="main" class="center">
+            <div id="default-screen", class="center">
+                <div id="DIV_highscores">
+                    <h2>Highscores</h2>
+                    <table id="TBL_highscores"></table>
+                </div>
+
+                <h2>Welcome to snake multiplayer, all you need to do is to join a room.</h2>
+                <p>Enjoy the game!</p>
+            </div>
+
+            <div id="add-room-popup" class="popup">
+                <button id="BTN_close-add" class="btn-closed">X</button>
+                <h1>New room</h1>
+                <form id="FORM_add-room" class="flex-column flex-space flex-grow">
+                    <div class="flex-column flex-space-around flex-grow">
+                        <div class="form-row mb-2">
+                            <label for="INP_room-name" class="me-2">Room name</label>
+                            <input type="text" id="INP_room-name" required pattern="[a-zA-Z0-9 _-]+" maxlength="20"/>
+                        </div>
+
+                        <div class="form-row mb-2">
+                            <label for="INP_player-max" class="me-2">Max players</label>
+                            <input type="number" id="INP_player-max" required pattern="[a-zA-Z0-9 _-]+" maxlength="20"
+                            min="1" max="6" value="2"/>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Create your room</button>
+                </form>
+            </div>
+        </main>
+
+        <div id="player-list-container" class="list">
+            <div id="player-list-header" class="list-header center">
+                <p>Players</p>
+            </div>
+            <div class="scroll">
+                <ul id="player-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="d-flex align-items-center fullheight-section">
+        <div class="container text-center">
+            <h1><span class="first-letter">E</span>KANS</h1>
+            
+            <div class="d-flex justify-content-center">
+                <img class="profile-image" id="IMG_avatar-selection" alt="Avatar Selection" />
+                <div id="avatar-button-set">
+                    <div class="flex-row">
+                        <label class="label-avatar-type" for="CB_avatar-type">&plusb;</label>
+                        <input type="checkbox" id="CB_avatar-type">
+
+                        <label class="label-avatar-gender" for="CB_avatar-gender">♂</label>
+                        <input type="checkbox" id="CB_avatar-gender" />
+                    </div>
+                    <div class = "flex-row">
+                        <button id="BTN_avatar-reroll">&#x2684;</button>
+                    </div>
+                </div>
+            </div>
+            <form class="center" id="login-form">
+                <input type="text" required placeholder="Enter a username..." id="INP_user-name" pattern="[a-zA-Z0-9 _-]*" maxlength="20" autofocus />
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </section> -->
+
+    <div id="error-screen" class="disabled center no-con">
+        <h1>You were disconnected!</h1>
+        <p>Refresh or come back later</p>
+    </div>
+</body>
+</html>
